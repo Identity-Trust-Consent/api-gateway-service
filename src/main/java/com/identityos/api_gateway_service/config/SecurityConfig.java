@@ -28,6 +28,7 @@ public class SecurityConfig {
                 .authorizeExchange(exchange -> exchange
                         .pathMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .pathMatchers("/actuator/**").permitAll()
+                        .pathMatchers("/.well-known/identity-os-configuration", "/api/v1/integration/discovery/**").permitAll()
                         .pathMatchers("/api/v1/auth/organization/**").permitAll()
                         .pathMatchers("/api/v1/onboarding/identity/**").permitAll()
                         .pathMatchers(HttpMethod.GET, "/api/v1/onboarding/organizations").permitAll()
